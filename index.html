@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOYZ - 信頼と未来を創るITパートナー</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Helvetica Neue', sans-serif; background: #f4f4f4; color: #333; }
+    header { background: linear-gradient(90deg, #2c5364, #203a43, #0f2027); color: #fff; padding: 60px 20px; text-align: center; animation: fadeInDown 1s ease; }
+    nav { background: #111; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; animation: slideInTop 1s ease; }
+    nav a { color: #fff; margin: 0 20px; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+    nav a:hover { color: #00bcd4; }
+    section { max-width: 1000px; margin: 60px auto; padding: 0 20px; animation: fadeInUp 1s ease; }
+    section h2 { text-align: center; color: #00796b; margin-bottom: 40px; font-size: 2em; position: relative; }
+    section h2::after { content: ''; display: block; width: 60px; height: 4px; background: #00bcd4; margin: 10px auto 0; border-radius: 2px; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .service-card { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; transform: translateY(0); }
+    .service-card:hover { transform: translateY(-10px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+    .service-card img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; z-index: 1000; animation: fadeIn 0.5s ease forwards; }
+    .modal-content { background: #fff; padding: 30px; border-radius: 10px; max-width: 600px; width: 90%; position: relative; transform: scale(0.9); animation: zoomIn 0.3s ease forwards; }
+    .modal-content h3 { margin-bottom: 15px; }
+    .modal-content p { line-height: 1.6; }
+    .modal-close { position: absolute; top: 10px; right: 15px; font-size: 1.5rem; cursor: pointer; color: #333; }
+    .about p, .contact p { line-height: 1.8; margin-bottom: 20px; }
+    footer { background: #111; color: #fff; text-align: center; padding: 20px; margin-top: 60px; font-size: 0.9em; animation: fadeInUp 1s ease; }@keyframes fadeInDown { from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);} }
+@keyframes slideInTop { from {opacity: 0; transform: translateY(-40px);} to {opacity: 1; transform: translateY(0);} }
+@keyframes fadeInUp { from {opacity: 0; transform: translateY(40px);} to {opacity: 1; transform: translateY(0);} }
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+@keyframes zoomIn { from {transform: scale(0.9);} to {transform: scale(1);} }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NOYZ</h1>
+    <p>信頼と未来を創るITパートナー</p>
+  </header>  <nav>
+    <a href="#services">事業内容</a>
+    <a href="#about">会社概要</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>  <section id="services">
+    <h2>事業内容</h2>
+    <div class="services-grid">
+      <div class="service-card" data-title="システム受託開発" data-description="業務効率化を実現するWebアプリや業務システムを、要件定義から保守までワンストップで開発。最新技術を取り入れた高品質な開発を行います。">
+        <img src="https://images.unsplash.com/photo-1581093588401-c1fd942dfd90?w=600&h=400&fit=crop" alt="受託開発">
+        <h3>システム受託開発</h3>
+      </div>
+      <div class="service-card" data-title="IT教育サービス" data-description="IT未経験者から現場エンジニア向けまで、実践重視の教育カリキュラムを提供。DX時代に必要なスキルを育成します。">
+        <img src="https://images.unsplash.com/photo-1623051514442-4c0f4eaf416c?w=600&h=400&fit=crop" alt="教育">
+        <h3>IT教育サービス</h3>
+      </div>
+      <div class="service-card" data-title="システム導入" data-description="ERP・CRM・SFAなどのパッケージ導入を、業務分析から設計・運用まで包括的にサポート。現場定着まで見据えた導入支援を行います。">
+        <img src="https://images.unsplash.com/photo-1603575448364-b9f5d7f265d0?w=600&h=400&fit=crop" alt="導入">
+        <h3>システム導入</h3>
+      </div>
+    </div>
+  </section>  <section id="about">
+    <h2>会社概要</h2>
+    <div class="about">
+      <p><strong>会社名：</strong>株式会社NOYZ</p>
+      <p><strong>設立：</strong>2018年4月</p>
+      <p><strong>所在地：</strong>東京都渋谷区未来町1-2-3 NOYZビル6F</p>
+      <p><strong>代表者：</strong>山本 太郎</p>
+      <p><strong>企業理念：</strong>「ともに、未来を描く」—— 技術と人間力で社会の課題を解決する。</p>
+      <p><strong>沿革：</strong><br>
+        2018年：会社設立<br>
+        2019年：大手物流企業向けWMS導入支援開始<br>
+        2021年：IT教育事業を立ち上げ<br>
+        2024年：社員数50名を突破</p>
+    </div>
+  </section>  <section id="contact">
+    <h2>お問い合わせ</h2>
+    <div class="contact">
+      <p>サービスに関するご相談・ご質問など、お気軽にお問い合わせください。</p>
+      <p><strong>メール：</strong>contact@noyz.co.jp</p>
+      <p><strong>電話番号：</strong>03-1234-5678</p>
+      <p><strong>住所：</strong>東京都渋谷区未来町1-2-3 NOYZビル6F</p>
+    </div>
+  </section>  <footer>
+    <p>&copy; 2025 NOYZ Inc. All rights reserved.</p>
+  </footer>  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDescription"></p>
+    </div>
+  </div>  <script>
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const cards = document.querySelectorAll('.service-card');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        modalTitle.textContent = card.dataset.title;
+        modalDescription.textContent = card.dataset.description;
+        modal.style.display = 'flex';
+      });
+    });
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    window.addEventListener('click', e => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  </script></body>
+</html>
