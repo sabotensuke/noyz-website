@@ -1,275 +1,376 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NOYZ - システム開発とITソリューション</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <div class="header-container">
-            <a href="#" class="logo">NO<span>YZ</span></a>
-            <nav id="nav">
-                <ul>
-                    <li><a href="#home">ホーム</a></li>
-                    <li><a href="#about">会社概要</a></li>
-                    <li><a href="#services">サービス</a></li>
-                    <li><a href="#contact">お問い合わせ</a></li>
-                </ul>
-            </nav>
-            <div class="hamburger" id="hamburger">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </div>
+      <div class="header-container">
+        <a href="#" class="logo">NO<span>YZ</span></a>
+        <nav id="nav">
+          <ul>
+            <li><a href="#home">ホーム</a></li>
+            <li><a href="#about">会社概要</a></li>
+            <li><a href="#services">サービス</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+          </ul>
+        </nav>
+        <div class="hamburger" id="hamburger">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </div>
+      </div>
     </header>
 
     <section class="hero" id="home">
-        <div class="slider">
-            <div class="slide slide-1 active"></div>
-            <div class="slide slide-2"></div>
-            <div class="slide slide-3"></div>
+      <div class="slider">
+        <div class="slide slide-1 active"></div>
+        <div class="slide slide-2"></div>
+        <div class="slide slide-3"></div>
+      </div>
+
+      <div class="hero-content">
+        <h1>ITソリューションでビジネスを革新する</h1>
+        <p>
+          NOYZはシステム開発とIT教育サービスを通じて、お客様のビジネス成長をサポートします。最新技術と豊富な経験で、最適なソリューションを提供します。
+        </p>
+        <div>
+          <a href="#contact" class="btn">お問い合わせ</a>
+          <a href="#services" class="btn btn-outline">サービスを見る</a>
         </div>
-        
-        <div class="hero-content">
-            <h1>ITソリューションでビジネスを革新する</h1>
-            <p>NOYZはシステム開発とIT教育サービスを通じて、お客様のビジネス成長をサポートします。最新技術と豊富な経験で、最適なソリューションを提供します。</p>
-            <div>
-                <a href="#contact" class="btn">お問い合わせ</a>
-                <a href="#services" class="btn btn-outline">サービスを見る</a>
-            </div>
-        </div>
-        
-        <div class="slider-nav">
-            <div class="slider-nav-btn" id="prev-slide">❮</div>
-            <div class="slider-nav-btn" id="next-slide">❯</div>
-        </div>
-        
-        <div class="slider-controls">
-            <div class="slider-dot active" data-slide="0"></div>
-            <div class="slider-dot" data-slide="1"></div>
-            <div class="slider-dot" data-slide="2"></div>
-        </div>
+      </div>
+
+      <div class="slider-nav">
+        <div class="slider-nav-btn" id="prev-slide">❮</div>
+        <div class="slider-nav-btn" id="next-slide">❯</div>
+      </div>
+
+      <div class="slider-controls">
+        <div class="slider-dot active" data-slide="0"></div>
+        <div class="slider-dot" data-slide="1"></div>
+        <div class="slider-dot" data-slide="2"></div>
+      </div>
     </section>
 
     <section class="section" id="about">
-        <div class="section-title">
-            <h2>会社概要</h2>
-            <p>NOYZは信頼と技術力でお客様のビジネスを支えるITパートナーです</p>
+      <div class="section-title">
+        <h2>会社概要</h2>
+        <p>NOYZは信頼と技術力でお客様のビジネスを支えるITパートナーです</p>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <h3>イノベーションと信頼性の融合</h3>
+          <p>
+            NOYZはシステム受託開発を中心に、様々なITソリューションサービスを提供しています。最新技術を駆使した開発と、確かな品質管理でお客様のビジネスをサポートします。
+          </p>
+          <p>
+            私たちは単なる請負開発ではなく、お客様のビジネス課題を深く理解し、最適な解決策を共に創り上げるパートナーシップを重視しています。
+          </p>
+          <p>
+            経験豊富なエンジニアチームが、お客様のニーズに合わせたカスタマイズされたソリューションを提供します。
+          </p>
         </div>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>イノベーションと信頼性の融合</h3>
-                <p>NOYZはシステム受託開発を中心に、様々なITソリューションサービスを提供しています。最新技術を駆使した開発と、確かな品質管理でお客様のビジネスをサポートします。</p>
-                <p>私たちは単なる請負開発ではなく、お客様のビジネス課題を深く理解し、最適な解決策を共に創り上げるパートナーシップを重視しています。</p>
-                <p>経験豊富なエンジニアチームが、お客様のニーズに合わせたカスタマイズされたソリューションを提供します。</p>
-            </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="会社概要">
-            </div>
+        <div class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            alt="会社概要"
+          />
         </div>
+      </div>
     </section>
 
     <section class="section services" id="services">
-        <div class="section-title">
-            <h2>サービス</h2>
-            <p>お客様のビジネスニーズに合わせた多様なITソリューション</p>
+      <div class="section-title">
+        <h2>サービス</h2>
+        <p>お客様のビジネスニーズに合わせた多様なITソリューション</p>
+      </div>
+      <div class="services-grid">
+        <!-- システム受託開発 -->
+        <div class="service-card" data-modal="modal1">
+          <div
+            class="service-img"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
+            "
+          >
+            <div class="image-overlay"></div>
+          </div>
+          <div class="service-content">
+            <h3>システム受託開発</h3>
+            <p>お客様の要件に合わせたカスタムシステム開発を行います。</p>
+          </div>
         </div>
-        <div class="services-grid">
-            <div class="service-card" data-modal="modal1">
-                <div class="service-img">📊</div>
-                <div class="service-content">
-                    <h3>システム受託開発</h3>
-                    <p>お客様の要件に合わせたカスタムシステム開発を行います。Webアプリケーション、業務システム、基幹システムなど、あらゆるシステム開発に対応します。</p>
-                </div>
-            </div>
-            <div class="service-card" data-modal="modal2">
-                <div class="service-img">👨‍💻</div>
-                <div class="service-content">
-                    <h3>システムエンジニアリングサービス</h3>
-                    <p>高度な技術力を有するエンジニアが、システム設計・構築からテスト・保守まで、システムライフサイクル全体をサポートします。</p>
-                </div>
-            </div>
-            <div class="service-card" data-modal="modal3">
-                <div class="service-img">🛠️</div>
-                <div class="service-content">
-                    <h3>システム導入</h3>
-                    <p>既存システムの導入支援から新規システムの導入まで、スムーズな移行を実現します。導入後の運用サポートも充実しています。</p>
-                </div>
-            </div>
-            <div class="service-card" data-modal="modal4">
-                <div class="service-img">🎓</div>
-                <div class="service-content">
-                    <h3>IT教育サービス</h3>
-                    <p>最新技術から基礎スキルまで、実践的なIT教育プログラムを提供します。企業研修から個人向け講座まで、幅広いニーズに対応します。</p>
-                </div>
-            </div>
+
+        <!-- システムエンジニアリング -->
+        <div class="service-card" data-modal="modal2">
+          <div
+            class="service-img"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
+            "
+          >
+            <div class="image-overlay"></div>
+          </div>
+          <div class="service-content">
+            <h3>システムエンジニアリングサービス</h3>
+            <p>
+              高度な技術力を有するエンジニアがシステム設計・構築をサポートします。
+            </p>
+          </div>
         </div>
+
+        <!-- システム導入 -->
+        <div class="service-card" data-modal="modal3">
+          <div
+            class="service-img"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
+            "
+          >
+            <div class="image-overlay"></div>
+          </div>
+          <div class="service-content">
+            <h3>システム導入</h3>
+            <p>
+              既存システムの導入支援から新規システムの導入までサポートします。
+            </p>
+          </div>
+        </div>
+
+        <!-- IT教育サービス -->
+        <div class="service-card" data-modal="modal4">
+          <div
+            class="service-img"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
+            "
+          >
+            <div class="image-overlay"></div>
+          </div>
+          <div class="service-content">
+            <h3>IT教育サービス</h3>
+            <p>
+              最新技術から基礎スキルまで、実践的なIT教育プログラムを提供します。
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Modal Windows -->
     <div class="modal-overlay" id="modal1">
-        <div class="modal">
-            <span class="modal-close">&times;</span>
-            <h2 class="modal-title">システム受託開発</h2>
-            <div class="modal-content">
-                <div class="modal-image">📊</div>
-                <p>NOYZのシステム受託開発サービスでは、お客様のビジネスプロセスに最適化された完全オーダーメイドのシステムを開発します。既成のパッケージソフトでは実現できない、独自の機能やワークフローにも柔軟に対応します。</p>
-                
-                <div class="modal-features">
-                    <div class="feature-item">
-                        <h4>Webアプリケーション開発</h4>
-                        <p>レスポンシブデザインに対応したモダンなWebアプリケーション</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>業務システム開発</h4>
-                        <p>業務効率化のためのカスタム業務システム</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>基幹システム開発</h4>
-                        <p>企業の中核を担う信頼性の高い基幹システム</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>モバイルアプリ開発</h4>
-                        <p>iOS/Android対応のネイティブアプリ開発</p>
-                    </div>
-                </div>
-                
-                <h3>開発プロセス</h3>
-                <p>要件定義から設計、開発、テスト、リリース、保守まで一貫したプロセスでサポートします。アジャイル開発にも対応しており、短期間でのプロトタイプ開発から大規模システムまで幅広く対応可能です。</p>
+      <div class="modal">
+        <span class="modal-close">&times;</span>
+        <h2 class="modal-title">システム受託開発</h2>
+        <div class="modal-content">
+          <div
+            class="modal-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');
+            "
+          ></div>
+          <p>
+            NOYZのシステム受託開発サービスでは、お客様のビジネスプロセスに最適化された完全オーダーメイドのシステムを開発します。
+          </p>
+
+          <div class="modal-features">
+            <div class="feature-item">
+              <h4>Webアプリケーション開発</h4>
+              <p>レスポンシブデザインに対応したモダンなWebアプリケーション</p>
             </div>
+            <div class="feature-item">
+              <h4>業務システム開発</h4>
+              <p>業務効率化のためのカスタム業務システム</p>
+            </div>
+            <div class="feature-item">
+              <h4>基幹システム開発</h4>
+              <p>企業の中核を担う信頼性の高い基幹システム</p>
+            </div>
+            <div class="feature-item">
+              <h4>モバイルアプリ開発</h4>
+              <p>iOS/Android対応のネイティブアプリ開発</p>
+            </div>
+          </div>
+
+          <h3>開発プロセス</h3>
+          <p>
+            要件定義から設計、開発、テスト、リリース、保守まで一貫したプロセスでサポートします。アジャイル開発にも対応しており、短期間でのプロトタイプ開発から大規模システムまで幅広く対応可能です。
+          </p>
         </div>
+      </div>
     </div>
 
     <div class="modal-overlay" id="modal2">
-        <div class="modal">
-            <span class="modal-close">&times;</span>
-            <h2 class="modal-title">システムエンジニアリングサービス</h2>
-            <div class="modal-content">
-                <div class="modal-image">👨‍💻</div>
-                <p>経験豊富なシステムエンジニアが、お客様のシステム開発プロジェクトを技術面から全面的にサポートします。大規模システム開発から小規模なシステム改修まで、あらゆるニーズに対応します。</p>
-                
-                <div class="modal-features">
-                    <div class="feature-item">
-                        <h4>システム設計</h4>
-                        <p>拡張性と保守性を考慮した最適なシステム設計</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>技術コンサルティング</h4>
-                        <p>プロジェクトの技術的課題に対する専門的なアドバイス</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>品質保証</h4>
-                        <p>厳格なテストプロセスによる品質の確保</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>パフォーマンスチューニング</h4>
-                        <p>システムの応答速度や処理能力の最適化</p>
-                    </div>
-                </div>
-                
-                <h3>技術スタック</h3>
-                <p>Java, .NET, Python, Node.js, React, Angular, Vue.js, Docker, Kubernetes, AWS, Azure, GCPなど、最新の技術スタックに対応しています。お客様の既存環境に合わせた技術選定も可能です。</p>
+      <div class="modal">
+        <span class="modal-close">&times;</span>
+        <h2 class="modal-title">システムエンジニアリングサービス</h2>
+        <div class="modal-content">
+          <div
+            class="modal-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');
+            "
+          ></div>
+          <p>
+            経験豊富なシステムエンジニアが、お客様のシステム開発プロジェクトを技術面から全面的にサポートします。
+          </p>
+
+          <div class="modal-features">
+            <div class="feature-item">
+              <h4>システム設計</h4>
+              <p>拡張性と保守性を考慮した最適なシステム設計</p>
             </div>
+            <div class="feature-item">
+              <h4>技術コンサルティング</h4>
+              <p>プロジェクトの技術的課題に対する専門的なアドバイス</p>
+            </div>
+            <div class="feature-item">
+              <h4>品質保証</h4>
+              <p>厳格なテストプロセスによる品質の確保</p>
+            </div>
+            <div class="feature-item">
+              <h4>パフォーマンスチューニング</h4>
+              <p>システムの応答速度や処理能力の最適化</p>
+            </div>
+          </div>
+
+          <h3>技術スタック</h3>
+          <p>
+            Java, .NET, Python, Node.js, React, Angular, Vue.js, Docker,
+            Kubernetes, AWS, Azure,
+            GCPなど、最新の技術スタックに対応しています。お客様の既存環境に合わせた技術選定も可能です。
+          </p>
         </div>
+      </div>
     </div>
 
     <div class="modal-overlay" id="modal3">
-        <div class="modal">
-            <span class="modal-close">&times;</span>
-            <h2 class="modal-title">システム導入</h2>
-            <div class="modal-content">
-                <div class="modal-image">🛠️</div>
-                <p>システム導入におけるあらゆる課題を解決します。新規システムの導入から既存システムのリプレースまで、スムーズな移行を実現するための包括的なサポートを提供します。</p>
-                
-                <div class="modal-features">
-                    <div class="feature-item">
-                        <h4>導入計画策定</h4>
-                        <p>リスクを最小化する詳細な導入計画</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>データ移行</h4>
-                        <p>既存データの損失なしの安全な移行</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>ユーザー研修</h4>
-                        <p>システム活用のための実践的な研修プログラム</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>導入後サポート</h4>
-                        <p>システム安定稼働までの継続的なサポート</p>
-                    </div>
-                </div>
-                
-                <h3>導入実績</h3>
-                <p>ERPシステム、CRMシステム、グループウェア、BIツールなど、様々なシステムの導入実績があります。業界特有の要件にも対応可能な専門知識を有しています。</p>
+      <div class="modal">
+        <span class="modal-close">&times;</span>
+        <h2 class="modal-title">システム導入</h2>
+        <div class="modal-content">
+          <div
+            class="modal-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');
+            "
+          ></div>
+          <p>
+            システム導入におけるあらゆる課題を解決します。新規システムの導入から既存システムのリプレースまでサポートします。
+          </p>
+
+          <div class="modal-features">
+            <div class="feature-item">
+              <h4>導入計画策定</h4>
+              <p>リスクを最小化する詳細な導入計画</p>
             </div>
+            <div class="feature-item">
+              <h4>データ移行</h4>
+              <p>既存データの損失なしの安全な移行</p>
+            </div>
+            <div class="feature-item">
+              <h4>ユーザー研修</h4>
+              <p>システム活用のための実践的な研修プログラム</p>
+            </div>
+            <div class="feature-item">
+              <h4>導入後サポート</h4>
+              <p>システム安定稼働までの継続的なサポート</p>
+            </div>
+          </div>
+
+          <h3>導入実績</h3>
+          <p>
+            ERPシステム、CRMシステム、グループウェア、BIツールなど、様々なシステムの導入実績があります。業界特有の要件にも対応可能な専門知識を有しています。
+          </p>
         </div>
+      </div>
     </div>
 
     <div class="modal-overlay" id="modal4">
-        <div class="modal">
-            <span class="modal-close">&times;</span>
-            <h2 class="modal-title">IT教育サービス</h2>
-            <div class="modal-content">
-                <div class="modal-image">🎓</div>
-                <p>デジタルトランスフォーメーション時代に対応したIT人材育成サービスです。最新技術から基礎スキルまで、実践的なカリキュラムで受講者のスキルアップを支援します。</p>
-                
-                <div class="modal-features">
-                    <div class="feature-item">
-                        <h4>プログラミング教育</h4>
-                        <p>初心者から上級者までの体系的なプログラミング講座</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>クラウド技術研修</h4>
-                        <p>AWS、Azure、GCPなどのクラウド技術習得</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>データサイエンス講座</h4>
-                        <p>AI・機械学習・データ分析の実践スキル</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>企業向け研修</h4>
-                        <p>組織のニーズに合わせたカスタマイズ研修</p>
-                    </div>
-                </div>
-                
-                <h3>教育方法</h3>
-                <p>講義形式だけでなく、ハンズオン形式やプロジェクトベースの学習など、効果的な習得が可能な多様な教育方法を採用しています。オンライン・オフラインの両方に対応し、柔軟な受講が可能です。</p>
+      <div class="modal">
+        <span class="modal-close">&times;</span>
+        <h2 class="modal-title">IT教育サービス</h2>
+        <div class="modal-content">
+          <div
+            class="modal-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');
+            "
+          ></div>
+          <p>
+            デジタルトランスフォーメーション時代に対応したIT人材育成サービスです。
+          </p>
+
+          <div class="modal-features">
+            <div class="feature-item">
+              <h4>プログラミング教育</h4>
+              <p>初心者から上級者までの体系的なプログラミング講座</p>
             </div>
+            <div class="feature-item">
+              <h4>クラウド技術研修</h4>
+              <p>AWS、Azure、GCPなどのクラウド技術習得</p>
+            </div>
+            <div class="feature-item">
+              <h4>データサイエンス講座</h4>
+              <p>AI・機械学習・データ分析の実践スキル</p>
+            </div>
+            <div class="feature-item">
+              <h4>企業向け研修</h4>
+              <p>組織のニーズに合わせたカスタマイズ研修</p>
+            </div>
+          </div>
+
+          <h3>教育方法</h3>
+          <p>
+            講義形式だけでなく、ハンズオン形式やプロジェクトベースの学習など、効果的な習得が可能な多様な教育方法を採用しています。オンライン・オフラインの両方に対応し、柔軟な受講が可能です。
+          </p>
         </div>
+      </div>
     </div>
 
     <footer id="contact">
-        <div class="footer-container">
-            <div class="footer-about">
-                <a href="#" class="footer-logo">NO<span>YZ</span></a>
-                <p>ITソリューションでビジネスを革新する。信頼と技術力でお客様の成長をサポートします。</p>
-            </div>
-            <div class="footer-links">
-                <h3>リンク</h3>
-                <ul>
-                    <li><a href="#home">ホーム</a></li>
-                    <li><a href="#about">会社概要</a></li>
-                    <li><a href="#services">サービス</a></li>
-                    <li><a href="#contact">お問い合わせ</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>お問い合わせ</h3>
-                <p><i>📧</i> info@noyz.co.jp</p>
-                <p><i>🏢</i> 大阪府大阪市中央区1-1-1</p>
-            </div>
+      <div class="footer-container">
+        <div class="footer-about">
+          <a href="#" class="footer-logo">NO<span>YZ</span></a>
+          <p>
+            ITソリューションでビジネスを革新する。信頼と技術力でお客様の成長をサポートします。
+          </p>
         </div>
-        <div class="copyright">
-            <p>&copy; 2023 NOYZ Co., Ltd. All Rights Reserved.</p>
+        <div class="footer-links">
+          <h3>リンク</h3>
+          <ul>
+            <li><a href="#home">ホーム</a></li>
+            <li><a href="#about">会社概要</a></li>
+            <li><a href="#services">サービス</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+          </ul>
         </div>
+        <div class="footer-contact">
+          <h3>お問い合わせ</h3>
+          <p><i>📧</i> info@noyz.co.jp</p>
+          <p><i>🏢</i> 大阪府大阪市中央区1-1-1</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023 NOYZ Co., Ltd. All Rights Reserved.</p>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
