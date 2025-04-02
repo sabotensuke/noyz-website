@@ -95,33 +95,88 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
+        /* Hero Section with Slider */
         .hero {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            color: white;
-            padding: 180px 20px 100px;
-            text-align: center;
             position: relative;
+            height: 100vh;
+            min-height: 600px;
             overflow: hidden;
+            margin-top: 70px;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(44, 62, 80, 0.5);
+        }
+
+        .slide-1 {
+            background-image: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        }
+
+        .slide-2 {
+            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        }
+
+        .slide-3 {
+            background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
         }
 
         .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            z-index: 5;
+            padding: 0 20px;
         }
 
         .hero h1 {
             font-size: 42px;
             margin-bottom: 20px;
             font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero p {
             font-size: 18px;
             margin-bottom: 30px;
             opacity: 0.9;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
         }
 
         .btn {
@@ -149,6 +204,60 @@
         .btn-outline:hover {
             background-color: #fff;
             color: #3498db;
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background-color: #fff;
+            transform: scale(1.2);
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 10;
+        }
+
+        .slider-nav-btn {
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.3);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .slider-nav-btn:hover {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.5);
         }
 
         /* About Section */
@@ -496,11 +605,17 @@
             }
 
             .hero {
-                padding: 150px 20px 80px;
+                height: 80vh;
+                min-height: 500px;
+                margin-top: 60px;
             }
 
             .hero h1 {
                 font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
             }
 
             .section {
@@ -509,6 +624,12 @@
 
             .section-title h2 {
                 font-size: 30px;
+            }
+
+            .slider-nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
             }
 
             .modal {
@@ -540,6 +661,13 @@
     </header>
 
     <section class="hero" id="home">
+        <div class="slider">
+            <div class="slide slide-1 active"></div>
+            <div class="slide slide-2"></div>
+            <div class="slide slide-3"></div>
+        </div>
+        
+        <!-- キャッチコピーとボタンをスライダーの上に重ねて表示 -->
         <div class="hero-content">
             <h1>ITソリューションでビジネスを革新する</h1>
             <p>NOYZはシステム開発とIT教育サービスを通じて、お客様のビジネス成長をサポートします。最新技術と豊富な経験で、最適なソリューションを提供します。</p>
@@ -548,8 +676,20 @@
                 <a href="#services" class="btn btn-outline">サービスを見る</a>
             </div>
         </div>
+        
+        <div class="slider-nav">
+            <div class="slider-nav-btn" id="prev-slide">❮</div>
+            <div class="slider-nav-btn" id="next-slide">❯</div>
+        </div>
+        
+        <div class="slider-controls">
+            <div class="slider-dot active" data-slide="0"></div>
+            <div class="slider-dot" data-slide="1"></div>
+            <div class="slider-dot" data-slide="2"></div>
+        </div>
     </section>
 
+    <!-- 以下、以前と同じコードが続きます -->
     <section class="section" id="about">
         <div class="section-title">
             <h2>会社概要</h2>
@@ -810,7 +950,7 @@
                 const modalId = card.getAttribute('data-modal');
                 const modal = document.getElementById(modalId);
                 modal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+                document.body.style.overflow = 'hidden';
             });
         });
 
@@ -820,7 +960,7 @@
                 e.stopPropagation();
                 const modal = button.closest('.modal-overlay');
                 modal.classList.remove('active');
-                document.body.style.overflow = ''; // Re-enable scrolling
+                document.body.style.overflow = '';
             });
         });
 
@@ -829,7 +969,7 @@
             overlay.addEventListener('click', (e) => {
                 if (e.target === overlay) {
                     overlay.classList.remove('active');
-                    document.body.style.overflow = ''; // Re-enable scrolling
+                    document.body.style.overflow = '';
                 }
             });
         });
@@ -840,11 +980,84 @@
                 modalOverlays.forEach(overlay => {
                     if (overlay.classList.contains('active')) {
                         overlay.classList.remove('active');
-                        document.body.style.overflow = ''; // Re-enable scrolling
+                        document.body.style.overflow = '';
                     }
                 });
             }
         });
+
+        // Slider Functionality
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        const prevBtn = document.getElementById('prev-slide');
+        const nextBtn = document.getElementById('next-slide');
+        let currentSlide = 0;
+        let slideInterval;
+
+        // Initialize slider
+        function startSlider() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Go to specific slide
+        function goToSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        // Next slide
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        // Previous slide
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+        // Pause slider when hovering
+        function pauseSlider() {
+            clearInterval(slideInterval);
+        }
+
+        // Resume slider when not hovering
+        function resumeSlider() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Event listeners
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            pauseSlider();
+            resumeSlider();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            pauseSlider();
+            resumeSlider();
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const slideIndex = parseInt(this.getAttribute('data-slide'));
+                goToSlide(slideIndex);
+                pauseSlider();
+                resumeSlider();
+            });
+        });
+
+        // Start the slider
+        startSlider();
+
+        // Pause on hover
+        const slider = document.querySelector('.slider');
+        slider.addEventListener('mouseenter', pauseSlider);
+        slider.addEventListener('mouseleave', resumeSlider);
 
         // Animation on Scroll
         const animateOnScroll = () => {
