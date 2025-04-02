@@ -1,267 +1,579 @@
-<!DOCTYPE html><html lang="ja">
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NOYZ - 信頼と未来を創るITパートナー</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Helvetica Neue', sans-serif;
-      color: #333;
-      background: url('https://images.unsplash.com/photo-1557682250-33bd709cbe85?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-      background-size: cover;
-      overflow-x: hidden;
-    }
-    .content-wrapper {
-      backdrop-filter: blur(4px);
-      background-color: rgba(255, 255, 255, 0.8);
-      min-height: 100vh;
-    }
-    header {
-      color: #fff;
-      padding: 80px 20px;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.6);
-    }
-    header h1 {
-      font-size: 3rem;
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 10px;
-      background: rgba(0, 0, 0, 0.5);
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      background: rgba(0, 0, 0, 0.4);
-      display: inline-block;
-      padding: 5px 15px;
-      border-radius: 8px;
-    }
-    nav {
-      background: rgba(0,0,0,0.85);
-      padding: 15px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 20px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover { color: #00bcd4; }
-    section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 40px 20px;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-      transition: all 1s ease;
-    }
-    section h2 {
-      text-align: center;
-      color: #00796b;
-      margin-bottom: 40px;
-      font-size: 2em;
-      position: relative;
-    }
-    section h2::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: #00bcd4;
-      margin: 10px auto 0;
-      border-radius: 2px;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-    .service-card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      transform: translateY(20px);
-      opacity: 0;
-    }
-    .service-card.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    .service-card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-    .modal-content {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 600px;
-      width: 90%;
-      position: relative;
-      transform: scale(0.9);
-    }
-    .modal-content h3 { margin-bottom: 15px; }
-    .modal-content p { line-height: 1.6; }
-    .modal-close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #333;
-    }
-    .about p, .contact p { line-height: 1.8; margin-bottom: 20px; }
-    footer {
-      background: rgba(0, 0, 0, 0.8);
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: 60px;
-      font-size: 0.9em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOYZ - システム開発とITソリューション</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #3498db;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #3498db;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 180px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #fff;
+            color: #3498db;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        .btn-outline:hover {
+            background-color: #fff;
+            color: #3498db;
+        }
+
+        /* About Section */
+        .section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: #3498db;
+        }
+
+        .section-title p {
+            color: #7f8c8d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f1f5f9;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-img {
+            height: 200px;
+            background-color: #3498db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-logo span {
+            color: #3498db;
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .footer-links h3, .footer-contact h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3:after, .footer-contact h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #3498db;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: #3498db;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px;
+            }
+
+            nav {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background-color: #fff;
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero {
+                padding: 150px 20px 80px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .section {
+                padding: 80px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="content-wrapper">
-  <header>
-    <h1>NOYZ</h1>
-    <p>信頼と未来を創るITパートナー</p>
-  </header>
-  <nav>
-    <a href="#services">事業内容</a>
-    <a href="#about">会社概要</a>
-    <a href="#contact">お問い合わせ</a>
-  </nav>
-  <section id="services">
-    <h2>事業内容</h2>
-    <div class="services-grid">
-      <div class="service-card" data-title="システム受託開発" data-description="業務効率化を実現するWebアプリや業務システムを、要件定義から保守までワンストップで開発。">
-        <img src="https://source.unsplash.com/featured/?code" alt="受託開発">
-        <h3>システム受託開発</h3>
-      </div>
-      <div class="service-card" data-title="IT教育サービス" data-description="IT未経験者から現場エンジニア向けまで、実践重視の教育カリキュラムを提供。">
-        <img src="https://source.unsplash.com/featured/?education" alt="教育">
-        <h3>IT教育サービス</h3>
-      </div>
-      <div class="service-card" data-title="システム導入" data-description="ERP・CRM・SFAなどの導入を、業務分析から定着支援までサポート。">
-        <img src="https://source.unsplash.com/featured/?technology" alt="導入">
-        <h3>システム導入</h3>
-      </div>
-    </div>
-  </section>
-  <section id="about">
-    <h2>会社概要</h2>
-    <div class="about">
-      <p><strong>会社名：</strong>株式会社NOYZ</p>
-      <p><strong>設立：</strong>2018年4月</p>
-      <p><strong>所在地：</strong>東京都渋谷区未来町1-2-3 NOYZビル6F</p>
-      <p><strong>代表者：</strong>山本 太郎</p>
-      <p><strong>企業理念：</strong>「ともに、未来を描く」—— 技術と人間力で社会の課題を解決する。</p>
-      <p><strong>沿革：</strong><br>2018年：会社設立<br>2019年：WMS導入支援開始<br>2021年：教育事業立ち上げ<br>2024年：社員数50名突破</p>
-    </div>
-  </section>
-  <section id="contact">
-    <h2>お問い合わせ</h2>
-    <div class="contact">
-      <p>ご相談・ご質問などお気軽にお問い合わせください。</p>
-      <p><strong>メール：</strong>contact@noyz.co.jp</p>
-      <p><strong>電話番号：</strong>03-1234-5678</p>
-      <p><strong>住所：</strong>東京都渋谷区未来町1-2-3 NOYZビル6F</p>
-    </div>
-  </section>
-  <footer>
-    <p>&copy; 2025 NOYZ Inc. All rights reserved.</p>
-  </footer>
-</div>
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
-    <h3 id="modalTitle"></h3>
-    <p id="modalDescription"></p>
-  </div>
-</div>
-<script>
-  gsap.registerPlugin(ScrollTrigger);
-  document.querySelectorAll("section").forEach(section => {
-    gsap.to(section, {
-      scrollTrigger: {
-        trigger: section,
-        start: "top 80%",
-        toggleActions: "play none none none"
-      },
-      opacity: 1,
-      y: 0,
-      duration: 1
-    });
-  });
-  document.querySelectorAll(".service-card").forEach((card, i) => {
-    gsap.to(card, {
-      scrollTrigger: {
-        trigger: card,
-        start: "top 90%",
-        toggleActions: "play none none none"
-      },
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      delay: i * 0.1
-    });
-  });
-  const modal = document.getElementById('modal');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalDescription = document.getElementById('modalDescription');
-  const cards = document.querySelectorAll('.service-card');
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      modalTitle.textContent = card.dataset.title;
-      modalDescription.textContent = card.dataset.description;
-      modal.style.display = 'flex';
-    });
-  });
-  function closeModal() {
-    modal.style.display = 'none';
-  }
-  window.addEventListener('click', e => {
-    if (e.target === modal) closeModal();
-  });
-</script>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">NO<span>YZ</span></a>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#about">会社概要</a></li>
+                    <li><a href="#services">サービス</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>ITソリューションでビジネスを革新する</h1>
+            <p>NOYZはシステム開発とIT教育サービスを通じて、お客様のビジネス成長をサポートします。最新技術と豊富な経験で、最適なソリューションを提供します。</p>
+            <div>
+                <a href="#contact" class="btn">お問い合わせ</a>
+                <a href="#services" class="btn btn-outline">サービスを見る</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="section-title">
+            <h2>会社概要</h2>
+            <p>NOYZは信頼と技術力でお客様のビジネスを支えるITパートナーです</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>イノベーションと信頼性の融合</h3>
+                <p>NOYZはシステム受託開発を中心に、様々なITソリューションサービスを提供しています。最新技術を駆使した開発と、確かな品質管理でお客様のビジネスをサポートします。</p>
+                <p>私たちは単なる請負開発ではなく、お客様のビジネス課題を深く理解し、最適な解決策を共に創り上げるパートナーシップを重視しています。</p>
+                <p>経験豊富なエンジニアチームが、お客様のニーズに合わせたカスタマイズされたソリューションを提供します。</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="会社概要">
+            </div>
+        </div>
+    </section>
+
+    <section class="section services" id="services">
+        <div class="section-title">
+            <h2>サービス</h2>
+            <p>お客様のビジネスニーズに合わせた多様なITソリューション</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-img">📊</div>
+                <div class="service-content">
+                    <h3>システム受託開発</h3>
+                    <p>お客様の要件に合わせたカスタムシステム開発を行います。Webアプリケーション、業務システム、基幹システムなど、あらゆるシステム開発に対応します。</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img">👨‍💻</div>
+                <div class="service-content">
+                    <h3>システムエンジニアリングサービス</h3>
+                    <p>高度な技術力を有するエンジニアが、システム設計・構築からテスト・保守まで、システムライフサイクル全体をサポートします。</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img">🛠️</div>
+                <div class="service-content">
+                    <h3>システム導入</h3>
+                    <p>既存システムの導入支援から新規システムの導入まで、スムーズな移行を実現します。導入後の運用サポートも充実しています。</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img">🎓</div>
+                <div class="service-content">
+                    <h3>IT教育サービス</h3>
+                    <p>最新技術から基礎スキルまで、実践的なIT教育プログラムを提供します。企業研修から個人向け講座まで、幅広いニーズに対応します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">NO<span>YZ</span></a>
+                <p>ITソリューションでビジネスを革新する。信頼と技術力でお客様の成長をサポートします。</p>
+            </div>
+            <div class="footer-links">
+                <h3>リンク</h3>
+                <ul>
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#about">会社概要</a></li>
+                    <li><a href="#services">サービス</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>お問い合わせ</h3>
+                <p><i>📧</i> info@noyz.co.jp</p>
+                <p><i>📞</i> 03-1234-5678</p>
+                <p><i>🏢</i> 東京都渋谷区渋谷1-1-1</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 NOYZ Co., Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('nav');
+
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                }
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Animation on Scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.service-card, .about-content');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Set initial state for animation
+        document.querySelectorAll('.service-card, .about-content').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.6s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
 </body>
 </html>
