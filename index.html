@@ -235,6 +235,7 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .service-card:hover {
@@ -259,6 +260,117 @@
         .service-content h3 {
             font-size: 20px;
             margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background-color: #fff;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            opacity: 0;
+        }
+
+        .modal-overlay.active .modal {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #7f8c8d;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: #e74c3c;
+            transform: rotate(90deg);
+        }
+
+        .modal-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .modal-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #3498db;
+        }
+
+        .modal-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .modal-image {
+            height: 200px;
+            background-color: #f1f5f9;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .modal-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-item {
+            background-color: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .feature-item h4 {
+            margin-bottom: 10px;
             color: #2c3e50;
         }
 
@@ -398,6 +510,10 @@
             .section-title h2 {
                 font-size: 30px;
             }
+
+            .modal {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
@@ -458,28 +574,28 @@
             <p>お客様のビジネスニーズに合わせた多様なITソリューション</p>
         </div>
         <div class="services-grid">
-            <div class="service-card">
+            <div class="service-card" data-modal="modal1">
                 <div class="service-img">📊</div>
                 <div class="service-content">
                     <h3>システム受託開発</h3>
                     <p>お客様の要件に合わせたカスタムシステム開発を行います。Webアプリケーション、業務システム、基幹システムなど、あらゆるシステム開発に対応します。</p>
                 </div>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-modal="modal2">
                 <div class="service-img">👨‍💻</div>
                 <div class="service-content">
                     <h3>システムエンジニアリングサービス</h3>
                     <p>高度な技術力を有するエンジニアが、システム設計・構築からテスト・保守まで、システムライフサイクル全体をサポートします。</p>
                 </div>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-modal="modal3">
                 <div class="service-img">🛠️</div>
                 <div class="service-content">
                     <h3>システム導入</h3>
                     <p>既存システムの導入支援から新規システムの導入まで、スムーズな移行を実現します。導入後の運用サポートも充実しています。</p>
                 </div>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-modal="modal4">
                 <div class="service-img">🎓</div>
                 <div class="service-content">
                     <h3>IT教育サービス</h3>
@@ -488,6 +604,139 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal Windows -->
+    <div class="modal-overlay" id="modal1">
+        <div class="modal">
+            <span class="modal-close">&times;</span>
+            <h2 class="modal-title">システム受託開発</h2>
+            <div class="modal-content">
+                <div class="modal-image">📊</div>
+                <p>NOYZのシステム受託開発サービスでは、お客様のビジネスプロセスに最適化された完全オーダーメイドのシステムを開発します。既成のパッケージソフトでは実現できない、独自の機能やワークフローにも柔軟に対応します。</p>
+                
+                <div class="modal-features">
+                    <div class="feature-item">
+                        <h4>Webアプリケーション開発</h4>
+                        <p>レスポンシブデザインに対応したモダンなWebアプリケーション</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>業務システム開発</h4>
+                        <p>業務効率化のためのカスタム業務システム</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>基幹システム開発</h4>
+                        <p>企業の中核を担う信頼性の高い基幹システム</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>モバイルアプリ開発</h4>
+                        <p>iOS/Android対応のネイティブアプリ開発</p>
+                    </div>
+                </div>
+                
+                <h3>開発プロセス</h3>
+                <p>要件定義から設計、開発、テスト、リリース、保守まで一貫したプロセスでサポートします。アジャイル開発にも対応しており、短期間でのプロトタイプ開発から大規模システムまで幅広く対応可能です。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal2">
+        <div class="modal">
+            <span class="modal-close">&times;</span>
+            <h2 class="modal-title">システムエンジニアリングサービス</h2>
+            <div class="modal-content">
+                <div class="modal-image">👨‍💻</div>
+                <p>経験豊富なシステムエンジニアが、お客様のシステム開発プロジェクトを技術面から全面的にサポートします。大規模システム開発から小規模なシステム改修まで、あらゆるニーズに対応します。</p>
+                
+                <div class="modal-features">
+                    <div class="feature-item">
+                        <h4>システム設計</h4>
+                        <p>拡張性と保守性を考慮した最適なシステム設計</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>技術コンサルティング</h4>
+                        <p>プロジェクトの技術的課題に対する専門的なアドバイス</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>品質保証</h4>
+                        <p>厳格なテストプロセスによる品質の確保</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>パフォーマンスチューニング</h4>
+                        <p>システムの応答速度や処理能力の最適化</p>
+                    </div>
+                </div>
+                
+                <h3>技術スタック</h3>
+                <p>Java, .NET, Python, Node.js, React, Angular, Vue.js, Docker, Kubernetes, AWS, Azure, GCPなど、最新の技術スタックに対応しています。お客様の既存環境に合わせた技術選定も可能です。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal3">
+        <div class="modal">
+            <span class="modal-close">&times;</span>
+            <h2 class="modal-title">システム導入</h2>
+            <div class="modal-content">
+                <div class="modal-image">🛠️</div>
+                <p>システム導入におけるあらゆる課題を解決します。新規システムの導入から既存システムのリプレースまで、スムーズな移行を実現するための包括的なサポートを提供します。</p>
+                
+                <div class="modal-features">
+                    <div class="feature-item">
+                        <h4>導入計画策定</h4>
+                        <p>リスクを最小化する詳細な導入計画</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>データ移行</h4>
+                        <p>既存データの損失なしの安全な移行</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>ユーザー研修</h4>
+                        <p>システム活用のための実践的な研修プログラム</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>導入後サポート</h4>
+                        <p>システム安定稼働までの継続的なサポート</p>
+                    </div>
+                </div>
+                
+                <h3>導入実績</h3>
+                <p>ERPシステム、CRMシステム、グループウェア、BIツールなど、様々なシステムの導入実績があります。業界特有の要件にも対応可能な専門知識を有しています。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal4">
+        <div class="modal">
+            <span class="modal-close">&times;</span>
+            <h2 class="modal-title">IT教育サービス</h2>
+            <div class="modal-content">
+                <div class="modal-image">🎓</div>
+                <p>デジタルトランスフォーメーション時代に対応したIT人材育成サービスです。最新技術から基礎スキルまで、実践的なカリキュラムで受講者のスキルアップを支援します。</p>
+                
+                <div class="modal-features">
+                    <div class="feature-item">
+                        <h4>プログラミング教育</h4>
+                        <p>初心者から上級者までの体系的なプログラミング講座</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>クラウド技術研修</h4>
+                        <p>AWS、Azure、GCPなどのクラウド技術習得</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>データサイエンス講座</h4>
+                        <p>AI・機械学習・データ分析の実践スキル</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>企業向け研修</h4>
+                        <p>組織のニーズに合わせたカスタマイズ研修</p>
+                    </div>
+                </div>
+                
+                <h3>教育方法</h3>
+                <p>講義形式だけでなく、ハンズオン形式やプロジェクトベースの学習など、効果的な習得が可能な多様な教育方法を採用しています。オンライン・オフラインの両方に対応し、柔軟な受講が可能です。</p>
+            </div>
+        </div>
+    </div>
 
     <footer id="contact">
         <div class="footer-container">
@@ -547,6 +796,53 @@
                 header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
             } else {
                 header.style.boxShadow = 'none';
+            }
+        });
+
+        // Modal Functionality
+        const serviceCards = document.querySelectorAll('.service-card');
+        const modalOverlays = document.querySelectorAll('.modal-overlay');
+        const modalCloseButtons = document.querySelectorAll('.modal-close');
+
+        // Open modal when service card is clicked
+        serviceCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const modalId = card.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+            });
+        });
+
+        // Close modal when close button is clicked
+        modalCloseButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const modal = button.closest('.modal-overlay');
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Re-enable scrolling
+            });
+        });
+
+        // Close modal when clicking outside of modal content
+        modalOverlays.forEach(overlay => {
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) {
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = ''; // Re-enable scrolling
+                }
+            });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                modalOverlays.forEach(overlay => {
+                    if (overlay.classList.contains('active')) {
+                        overlay.classList.remove('active');
+                        document.body.style.overflow = ''; // Re-enable scrolling
+                    }
+                });
             }
         });
 
