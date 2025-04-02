@@ -409,7 +409,7 @@ nav ul li a:hover:after {
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 48px;
+  font-size: 24px;
   cursor: pointer;
   color: #7f8c8d;
   transition: all 0.3s ease;
