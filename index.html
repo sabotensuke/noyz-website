@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NOYZ - システム開発とITソリューション</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -13,8 +17,9 @@
         <nav id="nav">
           <ul>
             <li><a href="#home">ホーム</a></li>
-            <li><a href="#about">会社概要</a></li>
+            <li><a href="#mission">会社理念</a></li>
             <li><a href="#services">サービス</a></li>
+            <li><a href="#company">会社情報</a></li>
             <li><a href="#contact">お問い合わせ</a></li>
           </ul>
         </nav>
@@ -50,8 +55,8 @@
           NOYZはシステム開発とIT教育サービスを通じて、お客様のビジネス成長をサポートします。最新技術と豊富な経験で、最適なソリューションを提供します。
         </p>
         <div>
-          <a href="#contact" class="btn">お問い合わせ</a>
-          <a href="#services" class="btn btn-outline">サービスを見る</a>
+          <a href="#contact" class="btn pulse">お問い合わせ</a>
+          <a href="#services" class="btn btn-outline pulse">サービスを見る</a>
         </div>
       </div>
 
@@ -67,29 +72,59 @@
       </div>
     </section>
 
-    <section class="section" id="about">
+    <section class="section" id="mission">
       <div class="section-title">
-        <h2>会社概要</h2>
-        <p>NOYZは信頼と技術力でお客様のビジネスを支えるITパートナーです</p>
+        <h2>会社理念</h2>
+        <p>NOYZが目指すもの。大切にしている価値観</p>
       </div>
-      <div class="about-content">
-        <div class="about-text">
-          <h3>イノベーションと信頼性の融合</h3>
+      <div class="mission-content">
+        <div class="mission-text">
+          <h3>技術で未来を創造する</h3>
           <p>
-            NOYZはシステム受託開発を中心に、様々なITソリューションサービスを提供しています。最新技術を駆使した開発と、確かな品質管理でお客様のビジネスをサポートします。
+            NOYZは「Technology for Better
+            Future」を理念に掲げ、技術の力で社会とビジネスの未来を創造することを使命としています。
           </p>
           <p>
-            私たちは単なる請負開発ではなく、お客様のビジネス課題を深く理解し、最適な解決策を共に創り上げるパートナーシップを重視しています。
+            私たちは単なる技術提供者ではなく、お客様のビジネスパートナーとして、技術を通じて真の価値を生み出すことに情熱を注いでいます。
           </p>
           <p>
-            経験豊富なエンジニアチームが、お客様のニーズに合わせたカスタマイズされたソリューションを提供します。
+            変化の激しい現代において、私たちは常に最先端の技術トレンドを追求しながら、お客様のビジネスに最適なソリューションを提供します。
           </p>
         </div>
-        <div class="about-image">
+        <div class="mission-image">
           <img
             src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-            alt="会社概要"
+            alt="会社理念"
           />
+        </div>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+          <h4>イノベーション</h4>
+          <p>
+            常に新しい技術とアイデアを追求し、従来の枠にとらわれない革新的なソリューションを提供します。
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-handshake"></i></div>
+          <h4>信頼</h4>
+          <p>
+            お客様との信頼関係を最優先し、約束を守り、透明性のあるコミュニケーションを心がけます。
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-chart-line"></i></div>
+          <h4>成長</h4>
+          <p>
+            社員一人ひとりの成長を支援し、それが会社全体の成長につながると信じています。
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-fire"></i></div>
+          <h4>情熱</h4>
+          <p>技術とビジネスに対する情熱を持ち、常に最高の成果を追求します。</p>
         </div>
       </div>
     </section>
@@ -107,12 +142,11 @@
             style="
               background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
             "
-          >
-            <div class="image-overlay"></div>
-          </div>
+          ></div>
           <div class="service-content">
             <h3>システム受託開発</h3>
             <p>お客様の要件に合わせたカスタムシステム開発を行います。</p>
+            <a class="service-btn">詳細を見る</a>
           </div>
         </div>
 
@@ -123,14 +157,13 @@
             style="
               background-image: url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
             "
-          >
-            <div class="image-overlay"></div>
-          </div>
+          ></div>
           <div class="service-content">
             <h3>システムエンジニアリングサービス</h3>
             <p>
               高度な技術力を有するエンジニアがシステム設計・構築をサポートします。
             </p>
+            <a class="service-btn">詳細を見る</a>
           </div>
         </div>
 
@@ -141,14 +174,13 @@
             style="
               background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
             "
-          >
-            <div class="image-overlay"></div>
-          </div>
+          ></div>
           <div class="service-content">
             <h3>システム導入</h3>
             <p>
               既存システムの導入支援から新規システムの導入までサポートします。
             </p>
+            <a class="service-btn">詳細を見る</a>
           </div>
         </div>
 
@@ -159,14 +191,43 @@
             style="
               background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
             "
-          >
-            <div class="image-overlay"></div>
-          </div>
+          ></div>
           <div class="service-content">
             <h3>IT教育サービス</h3>
             <p>
               最新技術から基礎スキルまで、実践的なIT教育プログラムを提供します。
             </p>
+            <a class="service-btn">詳細を見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company Info Section -->
+    <section class="company-info" id="company">
+      <div class="company-info-container">
+        <div class="section-title">
+          <h2 style="color: white">会社情報</h2>
+          <p style="color: rgba(255, 255, 255, 0.8)">NOYZ株式会社の基本情報</p>
+        </div>
+        <div class="company-info-grid">
+          <div class="info-card">
+            <h3>基本情報</h3>
+            <p><strong>会社名</strong>: 株式会社NOYZ</p>
+            <p><strong>設立</strong>: 2021年11月29日</p>
+            <p><strong>代表取締役</strong>: 押田　凌</p>
+          </div>
+          <div class="info-card">
+            <h3>所在地</h3>
+            <p>〒592-0005</p>
+            <p>大阪府高石市千代田三丁目8-10</p>
+          </div>
+          <div class="info-card">
+            <h3>事業内容</h3>
+            <p>・システム受託開発</p>
+            <p>・システムエンジニアリングサービス</p>
+            <p>・システム導入</p>
+            <p>・IT教育サービス</p>
           </div>
         </div>
       </div>
@@ -292,11 +353,6 @@
               <p>システム安定稼働までの継続的なサポート</p>
             </div>
           </div>
-
-          <h3>導入実績</h3>
-          <p>
-            ERPシステム、CRMシステム、グループウェア、BIツールなど、様々なシステムの導入実績があります。業界特有の要件にも対応可能な専門知識を有しています。
-          </p>
         </div>
       </div>
     </div>
@@ -355,19 +411,19 @@
           <h3>リンク</h3>
           <ul>
             <li><a href="#home">ホーム</a></li>
-            <li><a href="#about">会社概要</a></li>
+            <li><a href="#mission">会社理念</a></li>
             <li><a href="#services">サービス</a></li>
+            <li><a href="#company">会社情報</a></li>
             <li><a href="#contact">お問い合わせ</a></li>
           </ul>
         </div>
         <div class="footer-contact">
           <h3>お問い合わせ</h3>
-          <p><i>📧</i> info@noyz.co.jp</p>
-          <p><i>🏢</i> 大阪府大阪市中央区1-1-1</p>
+          <p><i>🏢</i> 大阪府高石市千代田三丁目8-10</p>
         </div>
       </div>
       <div class="copyright">
-        <p>&copy; 2023 NOYZ Co., Ltd. All Rights Reserved.</p>
+        <p>&copy; 2024 NOYZ Co., Ltd. All Rights Reserved.</p>
       </div>
     </footer>
 
