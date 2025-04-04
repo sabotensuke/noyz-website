@@ -216,3 +216,35 @@ buttons.forEach((button) => {
     button.classList.remove("pulse");
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // モバイルデバイスのみでスクロールアニメーションを有効化
+  if (window.matchMedia("(max-width: 991px)").matches) {
+    const serviceCards = document.querySelectorAll(".service-card");
+
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const btn = entry.target.querySelector(".service-btn");
+            if (btn) {
+              btn.classList.add("show");
+              // アニメーション後に監視を解除（オプション）
+              setTimeout(() => {
+                observer.unobserve(entry.target);
+              }, 1000);
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    serviceCards.forEach((card) => {
+      observer.observe(card);
+    });
+  }
+});

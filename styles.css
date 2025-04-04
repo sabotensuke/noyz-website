@@ -467,9 +467,39 @@ nav ul li a:hover:after {
   border-radius: 20px;
   font-size: 14px;
   margin-top: 15px;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(20px);
+}
+
+/* スクロール表示用クラスを追加 */
+.service-btn.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* サービスカードのホバー効果を削除（スマホでは無効なため） */
+@media (hover: hover) {
+  .service-card:hover .service-btn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* PC版 - ホバー時のみ表示 */
+@media (min-width: 992px) {
+  .service-card:hover .service-btn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* スマホ/タブレット版 - スクロール時に表示 */
+@media (max-width: 991px) {
+  .service-btn.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .service-card:hover .service-btn {
