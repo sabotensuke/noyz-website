@@ -863,142 +863,269 @@ footer {
   .modal-image {
     height: 180px;
   }
+}
 
-  /* バリューカードセクション - レスポンシブ対応 */
-  .values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-  }
-
-  .value-card {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+/* 追加したブレークポイント (1200px, 992px, 768px, 576px, 400px) */
+@media (max-width: 1200px) {
+  .header-container {
+    padding: 18px;
   }
 
-  .value-card:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, #3498db, #2ecc71);
+  .hero h1 {
+    font-size: 38px;
   }
 
-  .value-icon i {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #3498db;
-    transition: all 0.4s ease;
+  .section {
+    padding: 90px 20px;
   }
 
-  /* 各アイコンカラー */
-  .value-icon .fa-lightbulb {
-    color: #f1c40f;
+  .mission-content,
+  .values-grid,
+  .services-grid,
+  .company-info-grid {
+    gap: 25px;
   }
-  .value-icon .fa-handshake {
-    color: #2ecc71;
-  }
-  .value-icon .fa-chart-line {
-    color: #3498db;
-  }
-  .value-icon .fa-fire {
-    color: #e74c3c;
+}
+
+@media (max-width: 992px) {
+  .logo {
+    font-size: 24px;
   }
 
-  .value-card h4 {
-    font-size: 20px;
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  .hero {
+    min-height: 550px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
     margin-bottom: 15px;
-    color: #2c3e50;
   }
 
-  .value-card p {
-    color: #7f8c8d;
+  .hero p {
+    font-size: 17px;
+    margin-bottom: 25px;
+  }
+
+  .btn {
+    padding: 10px 25px;
+  }
+
+  .section-title h2 {
+    font-size: 32px;
+  }
+
+  .mission-text h3 {
+    font-size: 22px;
+  }
+
+  .value-card,
+  .info-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 既存の768pxメディアクエリを拡張 */
+  .header-container {
+    padding: 15px;
+  }
+
+  .hero {
+    height: 70vh;
+    min-height: 450px;
+    margin-top: 60px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    max-width: 90%;
+  }
+
+  .slider-nav-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  .slider-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .section {
+    padding: 70px 20px;
+  }
+
+  .section-title {
+    margin-bottom: 50px;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  .mission-content {
+    flex-direction: column;
+  }
+
+  .mission-text,
+  .mission-image {
+    min-width: 100%;
+  }
+
+  .values-grid,
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .service-img {
+    height: 180px;
+  }
+
+  .company-info {
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    font-size: 22px;
+  }
+
+  .hero {
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
     font-size: 15px;
   }
 
-  .value-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  .btn {
+    padding: 8px 20px;
+    font-size: 14px;
   }
 
-  .value-card:hover .value-icon i {
-    transform: scale(1.2) rotate(10deg);
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  .section {
+    padding: 60px 15px;
   }
 
-  /* レスポンシブ対応 */
-  @media (max-width: 1200px) {
-    .values-grid {
-      gap: 25px;
-    }
-    .value-card {
-      padding: 25px;
-    }
+  .section-title h2 {
+    font-size: 26px;
   }
 
-  @media (max-width: 992px) {
-    .values-grid {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .value-icon i {
-      font-size: 2.2rem;
-    }
-    .value-card h4 {
-      font-size: 18px;
-    }
+  .section-title h2:after {
+    width: 40px;
+    height: 2px;
   }
 
-  @media (max-width: 768px) {
-    .values-grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-    }
-    .value-card {
-      padding: 20px;
-    }
-    .value-icon i {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
+  .values-grid,
+  .services-grid,
+  .company-info-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  @media (max-width: 576px) {
-    .values-grid {
-      grid-template-columns: 1fr;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .value-card {
-      padding: 25px;
-    }
-    .value-icon i {
-      font-size: 2.2rem;
-    }
+  .value-card,
+  .service-card,
+  .info-card {
+    padding: 20px;
   }
 
-  @media (max-width: 400px) {
-    .value-card {
-      padding: 20px 15px;
-    }
-    .value-icon i {
-      font-size: 1.8rem;
-    }
-    .value-card h4 {
-      font-size: 17px;
-    }
-    .value-card p {
-      font-size: 14px;
-    }
+  .value-icon {
+    font-size: 40px;
+  }
+
+  .value-card h4,
+  .service-content h3,
+  .info-card h3 {
+    font-size: 18px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .btn {
+    margin: 5px;
+  }
+
+  .section {
+    padding: 50px 10px;
+  }
+
+  .section-title h2 {
+    font-size: 24px;
+  }
+
+  .mission-text h3 {
+    font-size: 20px;
+  }
+
+  .value-card,
+  .service-card,
+  .info-card {
+    padding: 18px 15px;
+  }
+
+  .service-img {
+    height: 150px;
+  }
+
+  .modal {
+    padding: 25px 15px;
+  }
+
+  .modal-title {
+    font-size: 24px;
+  }
+}
+
+/* タブレットの横向き用追加スタイル */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .hero {
+    height: 80vh;
+  }
+
+  .values-grid,
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 高解像度デバイス用 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo {
+    font-weight: 600;
+  }
+
+  .hero h1,
+  .section-title h2 {
+    font-weight: 650;
   }
 }
